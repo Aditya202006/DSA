@@ -2,66 +2,34 @@
 
 
 import java.util.*;
-
-class Selection {
-    public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
-      
-        System.out.println("Enter the number of elements: ");
-        int n = sc.nextInt();
-      
-        int[] A = new int[n];
-        
-        
-        System.out.println("Enter the elements: ");
-        for (int i = 0; i < A.length; i++) {
-            A[i] = sc.nextInt();
-        }
-        
-        
-        selectionSort(A);
-        
-        // Print the sorted array
-        System.out.println("Sorted List: ");
-        for (int i = 0; i < A.length; i++) {
-            System.out.print(A[i] + " ");
+class Sample {
+    public static void main(String[] args) {
+        int[] arr = {4,5,1,2,3};
+        selection(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+    static void selection(int[] arr){
+        for(int i=0;i<arr.length;i++){
+            int last = arr.length - i -1;
+            int maxIndex = maxIndex(arr,0,last);
+            swap(arr,last, maxIndex);
         }
     }
-
-    static void selectionSort(int[] A) {
-        int n = A.length;
-
-        for (int i = 0; i < n - 1; i++) {
-            int min_index = i;
-
-            for (int j = i + 1; j < n; j++) {
-                if (A[j] < A[min_index]) {
-                    min_index = j;
-                }
-            }
-
-            if (min_index != i) {
-                int temp = A[min_index];
-                A[min_index] = A[i];
-                A[i] = temp;
+    static int maxIndex(int[] arr,int start,int end){
+        int max = start;
+        for(int i=0;i<=end;i++){
+            if(arr[max] < arr[i]){
+                max = i;
             }
         }
+        return max;
+    }
+    static void swap(int[] arr,int a,int b){
+        int temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
     }
 }
 
-OUTPUT
-
-Enter the number of elements: 
-5
-Enter the elements: 
-7
-45
-99
-33
-31
-Sorted List: 
-7 
-31 
-33 
-45 
-99 
+//  OUTPUT
+//  [1,2,3,4,5]
