@@ -1,49 +1,24 @@
 /*Design JAVA Program to implement the Sorting technique - BUBBLE SORT */
 
 import java.util.*;
-class Bubble{
-   public static void main(String args[]){
-	Scanner sc=new Scanner(System.in);
-	System.out.println("Enter the number of elements: ");
-	int n=sc.nextInt();
-	int[] A=new  int[n];
-	System.out.println("Enter the elements: ");
-	for(int i=0;i<A.length;i++){
-		A[i]=sc.nextInt();
-	}
-	bubbleSort(A);
-	System.out.println("Sorted List: ");
-	for(int i=0;i<A.length;i++){
-		System.out.println(A[i]+" ");
-	}
-}
-static void bubbleSort(int[] A){
-  int n=A.length;
-  for(int i=0;i<n-1;i++){
-	for(int j=0;j<n-i-1;j++){
-		if(A[j] > A[j+1]){
-			int temp=A[j];
-			A[j]=A[j+1];
-			A[j+1]=temp;
-	}
-      }
-   }
- }
+class Sample{
+    public static void main(String[] args){
+        int[] arr={3,1,5,4,2};
+        bubble(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+    static void bubble(int[] arr){
+        for(int i=0;i<arr.length;i++){
+            for(int j=1;j<arr.length-i;j++){
+                if(arr[j]<arr[j-1]){
+                    int temp = arr[j];
+                    arr[j] = arr[j-1];
+                    arr[j-1] = temp;
+                }
+            }
+        }
+    }
 }
 
-OUTPUT
-  
-Enter the number of elements: 
-5
-Enter the elements: 
-7
-5
-4
-9
-8
-Sorted List: 
-4 
-5 
-7 
-8 
-9 
+//  OUTPUT
+//  [1,2,3,4,5]
