@@ -1,5 +1,5 @@
 //  287. Find the Duplicate Number [leetcode]
-
+//  https://leetcode.com/problems/find-the-duplicate-number/description/
 
 class Solution {
     public int findDuplicate(int[] nums) {
