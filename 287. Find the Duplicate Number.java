@@ -32,4 +32,4 @@ class Solution {
 
 //OUTPUT
 
-// [5,6]
+// 2
