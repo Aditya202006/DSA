@@ -4,6 +4,7 @@ import java.util.*;
 class Sample{
     public static void main(String[] args){
         int[] arr={3,1,5,4,2};
+        boolean swapped = false;
         bubble(arr);
         System.out.println(Arrays.toString(arr));
     }
@@ -14,6 +15,8 @@ class Sample{
                     int temp = arr[j];
                     arr[j] = arr[j-1];
                     arr[j-1] = temp;
+                    
+
                 }
             }
         }
