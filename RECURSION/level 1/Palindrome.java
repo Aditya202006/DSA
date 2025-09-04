@@ -4,7 +4,7 @@ class Main {
         static int rev=0;
     public static void main(String[] args) {
         int n=1441;
-        sum(n);
+        palindrome(n);
         if(n==rev){
             System.out.println("palindrome");
         }
@@ -12,7 +12,7 @@ class Main {
             System.out.println("not a palindrome");
         }
     }
-        public static void sum(int n){ 
+        public static void palindrome(int n){ 
             if(n==0)
                 return;
             int rem = n %10;
